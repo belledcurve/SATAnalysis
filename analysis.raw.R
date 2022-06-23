@@ -7,6 +7,7 @@ outersect <- function(x, y, ...) {
   setdiff(big.vec, unique(duplicates))
 }
 
+
 reading <- c(1 : 52)
 writing <- c(53 : 44+52)
 
@@ -17,7 +18,7 @@ command.of.evidence.writing <- command.of.evidence.writing.raw + 52
 words.in.context.writing.raw <- c(1:2, 17, 19, 28, 30, 36, 39)
 words.in.context.writing <- words.in.context.writing.raw + 52
 
-expression.of.ideas.writing.raw <- c(1:2, 5:7, 11, 15:19, 22, 25, 27:28, 30, 32-36, 39:40, 44)
+expression.of.ideas.writing.raw <- c(1:2, 5:7, 11, 15:19, 22, 25, 27:28, 30, 32:36, 39:40, 44)
 expression.of.ideas.writing <- expression.of.ideas.writing.raw + 52
 
 standard.english.convention.writing.raw <- c(3:4, 8:10, 12:14, 20:21, 23:24, 26, 29, 31, 37:38, 41:43)
@@ -26,7 +27,7 @@ standard.english.convention.writing <- standard.english.convention.writing.raw +
 # reading question type 
 command.of.evidence.reading <- c(8, 17:18, 22, 26:28, 36, 39, 42)
 
-words.in.context.reading <- c(5, 6, 10, 13, 23-24, 34, 37, 40, 43)
+words.in.context.reading <- c(5, 6, 10, 13, 23:24, 34, 37, 40, 43)
 
 
 # reading passage type 
@@ -91,13 +92,13 @@ studentb.history_social <- intersect(studentb.wrong, analysis.in.history_social.
 studentb.science <- intersect(studentb.wrong, analysis.in.science)
 
 
-  #setup slots for question numbers
+
 quer <- c(rep(NA, times = length(studenta.wrong)*13))
 dim(quer) <- c(13,length(studenta.wrong))
 quer
 
 
-  #input question numbers into slots
+
 for (s in 1:length(studenta.wrong)) {
   if (studenta.wrong[s] > 52) {
     studenta.wrong[s] <- (studenta.wrong[s] - 52)
@@ -191,13 +192,13 @@ for (s in 1:length(literature)) {
 
 
 
-  #col for description - number of wrong answers 
+
 no.wrong <- c(
   length(studenta.wrong),
   length(studenta.wrong.reading),
   length(studenta.coe),
   length(studenta.wic),
-  length(studenta.wrong.reading)-length(c(unique(studenta.coe, studenta.wic))),
+  length(studenta.wrong.reading)-length(c(studenta.coe, studenta.wic)),
   length(studenta.wrong.writing),
   length(studenta.coew),
   length(studenta.wicw),
@@ -205,16 +206,15 @@ no.wrong <- c(
   length(studenta.secw),
   length(studenta.history_social),
   length(studenta.science),
-  length(studenta.wrong)-length(c(unique(studenta.history_social, studenta.science)))
+  length(studenta.wrong)-length(c(studenta.history_social, studenta.science))
 )
 
-  #col for description - percentage of wrong answers
 percent.wrong <- c(
   length(studenta.wrong)/length(c(reading,writing)),
   length(studenta.wrong.reading)/length(reading),
   length(studenta.coe)/length(command.of.evidence.reading),
   length(studenta.wic)/length(words.in.context.reading),
-  (length(studenta.wrong.reading)-length(c(unique(studenta.coe, studenta.wic))))/(length(reading)-length(c(unique(command.of.evidence.reading, words.in.context.reading)))),
+  (length(studenta.wrong.reading)-length(c(studenta.coe, studenta.wic)))/(length(reading)-length(c(command.of.evidence.reading, words.in.context.reading))),
   length(studenta.wrong.writing)/length(writing),
   length(studenta.coew)/length(command.of.evidence.writing),
   length(studenta.wicw)/length(words.in.context.writing),
@@ -227,6 +227,7 @@ percent.wrong <- c(
 
 
 index <- c("total.wrong","reading.wrong", "coe", "wic", "others", "writing.wrong", "coew", "wicw", "eoiw", "secw", "by passage.history", "by passage.science", "by passage.literature")
+row <- c("no.wrong","percent.wrong")
 
   
 #results.raw <- matrix(no.wrong, percent.wrong, dimnames = list(row, col))
