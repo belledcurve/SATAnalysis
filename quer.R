@@ -1,107 +1,107 @@
 values <- c(
-  length(jiho.wrong),
-  length(jiho.wrong.reading),
-  length(jiho.coe),
-  length(jiho.wic),
-  length(jiho.wrong.reading)-length(c(unique(jiho.coe, jiho.wic))),
-  length(jiho.wrong.writing),
-  length(jiho.coew),
-  length(jiho.wicw),
-  length(jiho.eoiw),
-  length(jiho.secw),
-  length(jiho.history_social),
-  length(jiho.science),
-  length(jiho.wrong)-length(c(unique(jiho.history_social, jiho.science)))
+  length(studenta.wrong),
+  length(studenta.wrong.reading),
+  length(studenta.coe),
+  length(studenta.wic),
+  length(studenta.wrong.reading)-length(c(unique(studenta.coe, studenta.wic))),
+  length(studenta.wrong.writing),
+  length(studenta.coew),
+  length(studenta.wicw),
+  length(studenta.eoiw),
+  length(studenta.secw),
+  length(studenta.history_social),
+  length(studenta.science),
+  length(studenta.wrong)-length(c(unique(studenta.history_social, studenta.science)))
 )
 
 
-for (s in 1:length(jiho.wrong)) {
-  if (jiho.wrong[s] > 52) {
-    jiho.wrong[s] <- (jiho.wrong[s] - 52)
+for (s in 1:length(studenta.wrong)) {
+  if (studenta.wrong[s] > 52) {
+    studenta.wrong[s] <- (studenta.wrong[s] - 52)
   }
-  quer[1,s] = jiho.wrong[s]
+  quer[1,s] = studenta.wrong[s]
 }
 
 
-for (s in 1:length(jiho.wrong.reading)) {
-  quer[2,s] = jiho.wrong.reading[s]
+for (s in 1:length(studenta.wrong.reading)) {
+  quer[2,s] = studenta.wrong.reading[s]
 }
 
 
-for (s in 1:length(jiho.coe)) {
-  quer[3,s] = jiho.coe[s]
+for (s in 1:length(studenta.coe)) {
+  quer[3,s] = studenta.coe[s]
 }
 
 
-for (s in 1:length(jiho.wic)) {
-  quer[4,s] = jiho.wic[s]
+for (s in 1:length(studenta.wic)) {
+  quer[4,s] = studenta.wic[s]
 }
 
-others.reading <- outersect(jiho.wrong.reading, jiho.coe, jiho.wic)
+others.reading <- outersect(studenta.wrong.reading, studenta.coe, studenta.wic)
 for (s in 1:length(others.reading)) {
   quer[5,s] = others.reading[s]
 }
 
 
-for (s in 1:length(jiho.wrong.writing)) {
-  if (jiho.wrong.writing[s] > 52) {
-    jiho.wrong.writing[s] <- (jiho.wrong.writing[s] - 52)
+for (s in 1:length(studenta.wrong.writing)) {
+  if (studenta.wrong.writing[s] > 52) {
+    studenta.wrong.writing[s] <- (studenta.wrong.writing[s] - 52)
   }
-  quer[6,s] = jiho.wrong.writing[s]
+  quer[6,s] = studenta.wrong.writing[s]
 }
 
 
-for (s in 1:length(jiho.coew)) {
-  if (jiho.coew[s] > 52) {
-    jiho.coew[s] <- (jiho.coew[s] - 52)
+for (s in 1:length(studenta.coew)) {
+  if (studenta.coew[s] > 52) {
+    studenta.coew[s] <- (studenta.coew[s] - 52)
   }
-  quer[7,s] = jiho.coew[s]
+  quer[7,s] = studenta.coew[s]
 }
 
 
-for (s in 1:length(jiho.wicw)) {
-  if (jiho.wicw[s] > 52) {
-    jiho.wicw[s] <- (jiho.wicw[s] - 52)
+for (s in 1:length(studenta.wicw)) {
+  if (studenta.wicw[s] > 52) {
+    studenta.wicw[s] <- (studenta.wicw[s] - 52)
   }
-  quer[8,s] = jiho.wicw[s]
+  quer[8,s] = studenta.wicw[s]
 }
 
 
-for (s in 1:length(jiho.eoiw)) {
-  if (jiho.eoiw[s] > 52) {
-    jiho.eoiw[s] <- (jiho.eoiw[s] - 52)
+for (s in 1:length(studenta.eoiw)) {
+  if (studenta.eoiw[s] > 52) {
+    studenta.eoiw[s] <- (studenta.eoiw[s] - 52)
   }
-  quer[9,s] = jiho.eoiw[s]
+  quer[9,s] = studenta.eoiw[s]
 }
 
 
-for (s in 1:length(jiho.secw)) {
-  if (jiho.secw[s] > 52) {
-    jiho.secw[s] <- (jiho.secw[s] - 52)
+for (s in 1:length(studenta.secw)) {
+  if (studenta.secw[s] > 52) {
+    studenta.secw[s] <- (studenta.secw[s] - 52)
   }
-  quer[10,s] = jiho.secw[s]
+  quer[10,s] = studenta.secw[s]
 }
 
 
-for (s in 1:length(jiho.history_social)) {
-  if (jiho.history_social[s] > 52) {
-    jiho.history_social[s] <- (jiho.history_social[s] - 52)
+for (s in 1:length(studenta.history_social)) {
+  if (studenta.history_social[s] > 52) {
+    studenta.history_social[s] <- (studenta.history_social[s] - 52)
   }
-  quer[11,s] = jiho.history_social[s]
+  quer[11,s] = studenta.history_social[s]
 }
 
 
-for (s in 1:length(jiho.science)) {
-  if (jiho.science[s] > 52) {
-    jiho.science[s] <- (jiho.science[s] - 52)
+for (s in 1:length(studenta.science)) {
+  if (studenta.science[s] > 52) {
+    studenta.science[s] <- (studenta.science[s] - 52)
   }
-  quer[12,s] = jiho.science[s]
+  quer[12,s] = studenta.science[s]
 }
 
-jiho.literature <- outersect(jiho.wrong, jiho.science, jiho.history_social)
+studenta.literature <- outersect(studenta.wrong, studenta.science, studenta.history_social)
 for (s in 1:length(literature)) {
-  if (jiho.literature[s] > 52) {
-    jiho.literature[s] <- (jiho.literature[s] - 52)
+  if (studenta.literature[s] > 52) {
+    studenta.literature[s] <- (studenta.literature[s] - 52)
   }
   quer[13,s] = literature[s]
 }
