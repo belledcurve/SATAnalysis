@@ -1,6 +1,11 @@
 install.packages ("tidyverse")
 library(tidyverse)
 
+outersect <- function(x, y, ...) {
+  big.vec <- c(x, y, ...)
+  duplicates <- big.vec[duplicated(big.vec)]
+  setdiff(big.vec, unique(duplicates))
+}
 
 reading <- c(1 : 52)
 writing <- c(53 : 44+52)
