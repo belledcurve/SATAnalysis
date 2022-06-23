@@ -28,7 +28,7 @@ words.in.context.reading <- c(5, 6, 10, 13, 23-24, 34, 37, 40, 43)
 analysis.in.history_social.studies.reading <- c(10:19, 29:37)
 analysis.in.history_social.studies.writing.raw <- c(25, 27, 28, 30, 32, 33)
 analysis.in.history_social.studies.writing <- analysis.in.history_social.studies.writing.raw + 52
-analysis.in.history_social.studies <- c(analysis.in.history_social.studies.writing< analysis.in.history_social.studies.reading)
+analysis.in.history_social.studies <- c(analysis.in.history_social.studies.writing, analysis.in.history_social.studies.reading)
 
 
 analysis.in.science.reading <- c(20:28, 38:47)
@@ -40,146 +40,146 @@ analysis.in.science <- c(analysis.in.science.writing, analysis.in.science.readin
 
 
 # student wrong answers
-jiho.wrong.reading <- c(1, 5, 7, 8, 17, 20, 29, 31, 33, 34, 40, 46, 47)
-jiho.wrong.writing.raw <- c(2, 3, 6, 7, 9, 10, 12, 13, 17, 19, 20, 29, 30, 36, 37)
-jiho.wrong.writing <- jiho.wrong.writing.raw + 52
-jiho.wrong <- c(jiho.wrong.reading, jiho.wrong.writing)
+studenta.wrong.reading <- c(1, 5, 7, 8, 17, 20, 29, 31, 33, 34, 40, 46, 47)
+studenta.wrong.writing.raw <- c(2, 3, 6, 7, 9, 10, 12, 13, 17, 19, 20, 29, 30, 36, 37)
+studenta.wrong.writing <- studenta.wrong.writing.raw + 52
+studenta.wrong <- c(studenta.wrong.reading, studenta.wrong.writing)
 
 
-jaeha.wrong.reading <- c(5, 17, 21, 22, 29, 32, 33, 44, 46, 47)
-jaeha.wrong.writing.raw <- c(3, 4, 5, 6, 7, 13, 18, 22, 23, 29, 30, 34, 35, 36, 42)
-jaeha.wrong.writing <- jaeha.wrong.writing.raw + 52
-jaeha.wrong <- c(jaeha.wrong.reading, jaeha.wrong.writing)
+studentb.wrong.reading <- c(5, 17, 21, 22, 29, 32, 33, 44, 46, 47)
+studentb.wrong.writing.raw <- c(3, 4, 5, 6, 7, 13, 18, 22, 23, 29, 30, 34, 35, 36, 42)
+studentb.wrong.writing <- studentb.wrong.writing.raw + 52
+studentb.wrong <- c(studentb.wrong.reading, studentb.wrong.writing)
 
 
 
 
 
 #student wrong answers analysis
-	#reading analysis - student 1
-jiho.coe <- intersect(jiho.wrong, command.of.evidence.reading)
-jiho.wic <- intersect(jiho.wrong, words.in.context.reading)
+  #reading analysis - student 1
+studenta.coe <- intersect(studenta.wrong, command.of.evidence.reading)
+studenta.wic <- intersect(studenta.wrong, words.in.context.reading)
 
-	#writing analysis - student 1
-jiho.coew <- intersect(jiho.wrong, command.of.evidence.writing)
-jiho.wicw <- intersect(jiho.wrong, words.in.context.writing)
-jiho.eoiw <- intersect(jiho.wrong, expression.of.ideas.writing)
-jiho.secw <- intersect(jiho.wrong, standard.english.convention.writing)
+  #writing analysis - student 1
+studenta.coew <- intersect(studenta.wrong, command.of.evidence.writing)
+studenta.wicw <- intersect(studenta.wrong, words.in.context.writing)
+studenta.eoiw <- intersect(studenta.wrong, expression.of.ideas.writing)
+studenta.secw <- intersect(studenta.wrong, standard.english.convention.writing)
 
-	
-	#reading analysis - student 2
-jaeha.coe <- intersect(jaeha.wrong, command.of.evidence.reading)
-jaeha.wic <- intersect(jaeha.wrong, words.in.context.reading)
+  
+  #reading analysis - student 2
+studentb.coe <- intersect(studentb.wrong, command.of.evidence.reading)
+studentb.wic <- intersect(studentb.wrong, words.in.context.reading)
 
-	#writing analysis - student 2
-jaeha.coew <- intersect(jaeha.wrong, command.of.evidence.writing)
-jaeha.wicw <- intersect(jaeha.wrong, words.in.context.writing)
-jaeha.eoiw <- intersect(jaeha.wrong, expression.of.ideas.writing)
-jaeha.secw <- intersect(jaeha.wrong, standard.english.convention.writing)
-
-
-	#passage analysis
-jiho.history_social <- intersect(jiho.wrong, analysis.in.history_social.studies)
-jiho.science <- intersect(jiho.wrong, analysis.in.science)
-
-jaeha.history_social <- intersect(jaeha.wrong, analysis.in.history_social.studies)
-jaeha.science <- intersect(jaeha.wrong, analysis.in.science)
+  #writing analysis - student 2
+studentb.coew <- intersect(studentb.wrong, command.of.evidence.writing)
+studentb.wicw <- intersect(studentb.wrong, words.in.context.writing)
+studentb.eoiw <- intersect(studentb.wrong, expression.of.ideas.writing)
+studentb.secw <- intersect(studentb.wrong, standard.english.convention.writing)
 
 
+  #passage analysis
+studenta.history_social <- intersect(studenta.wrong, analysis.in.history_social.studies)
+studenta.science <- intersect(studenta.wrong, analysis.in.science)
 
-quer <- c(rep(NA, times = length(jiho.wrong)*13))
-dim(quer) <- c(13,length(jiho.wrong))
+studentb.history_social <- intersect(studentb.wrong, analysis.in.history_social.studies)
+studentb.science <- intersect(studentb.wrong, analysis.in.science)
+
+
+
+quer <- c(rep(NA, times = length(studenta.wrong)*13))
+dim(quer) <- c(13,length(studenta.wrong))
 quer
 
 
 
-for (s in 1:length(jiho.wrong)) {
-  if (jiho.wrong[s] > 52) {
-    jiho.wrong[s] <- (jiho.wrong[s] - 52)
+for (s in 1:length(studenta.wrong)) {
+  if (studenta.wrong[s] > 52) {
+    studenta.wrong[s] <- (studenta.wrong[s] - 52)
   }
-  quer[1,s] = jiho.wrong[s]
+  quer[1,s] = studenta.wrong[s]
 }
 
 
-for (s in 1:length(jiho.wrong.reading)) {
-  quer[2,s] = jiho.wrong.reading[s]
+for (s in 1:length(studenta.wrong.reading)) {
+  quer[2,s] = studenta.wrong.reading[s]
 }
 
 
-for (s in 1:length(jiho.coe)) {
-  quer[3,s] = jiho.coe[s]
+for (s in 1:length(studenta.coe)) {
+  quer[3,s] = studenta.coe[s]
 }
 
 
-for (s in 1:length(jiho.wic)) {
-  quer[4,s] = jiho.wic[s]
+for (s in 1:length(studenta.wic)) {
+  quer[4,s] = studenta.wic[s]
 }
 
-others.reading <- outersect(jiho.wrong.reading, jiho.coe, jiho.wic)
+others.reading <- outersect(studenta.wrong.reading, studenta.coe, studenta.wic)
 for (s in 1:length(others.reading)) {
   quer[5,s] = others.reading[s]
 }
 
 
-for (s in 1:length(jiho.wrong.writing)) {
-  if (jiho.wrong.writing[s] > 52) {
-    jiho.wrong.writing[s] <- (jiho.wrong.writing[s] - 52)
+for (s in 1:length(studenta.wrong.writing)) {
+  if (studenta.wrong.writing[s] > 52) {
+    studenta.wrong.writing[s] <- (studenta.wrong.writing[s] - 52)
   }
-  quer[6,s] = jiho.wrong.writing[s]
+  quer[6,s] = studenta.wrong.writing[s]
 }
 
 
-for (s in 1:length(jiho.coew)) {
-  if (jiho.coew[s] > 52) {
-    jiho.coew[s] <- (jiho.coew[s] - 52)
+for (s in 1:length(studenta.coew)) {
+  if (studenta.coew[s] > 52) {
+    studenta.coew[s] <- (studenta.coew[s] - 52)
   }
-  quer[7,s] = jiho.coew[s]
+  quer[7,s] = studenta.coew[s]
 }
 
 
-for (s in 1:length(jiho.wicw)) {
-  if (jiho.wicw[s] > 52) {
-    jiho.wicw[s] <- (jiho.wicw[s] - 52)
+for (s in 1:length(studenta.wicw)) {
+  if (studenta.wicw[s] > 52) {
+    studenta.wicw[s] <- (studenta.wicw[s] - 52)
   }
-  quer[8,s] = jiho.wicw[s]
+  quer[8,s] = studenta.wicw[s]
 }
 
 
-for (s in 1:length(jiho.eoiw)) {
-  if (jiho.eoiw[s] > 52) {
-    jiho.eoiw[s] <- (jiho.eoiw[s] - 52)
+for (s in 1:length(studenta.eoiw)) {
+  if (studenta.eoiw[s] > 52) {
+    studenta.eoiw[s] <- (studenta.eoiw[s] - 52)
   }
-  quer[9,s] = jiho.eoiw[s]
+  quer[9,s] = studenta.eoiw[s]
 }
 
 
-for (s in 1:length(jiho.secw)) {
-  if (jiho.secw[s] > 52) {
-    jiho.secw[s] <- (jiho.secw[s] - 52)
+for (s in 1:length(studenta.secw)) {
+  if (studenta.secw[s] > 52) {
+    studenta.secw[s] <- (studenta.secw[s] - 52)
   }
-  quer[10,s] = jiho.secw[s]
+  quer[10,s] = studenta.secw[s]
 }
 
 
-for (s in 1:length(jiho.history_social)) {
-  if (jiho.history_social[s] > 52) {
-    jiho.history_social[s] <- (jiho.history_social[s] - 52)
+for (s in 1:length(studenta.history_social)) {
+  if (studenta.history_social[s] > 52) {
+    studenta.history_social[s] <- (studenta.history_social[s] - 52)
   }
-  quer[11,s] = jiho.history_social[s]
+  quer[11,s] = studenta.history_social[s]
 }
 
 
-for (s in 1:length(jiho.science)) {
-  if (jiho.science[s] > 52) {
-    jiho.science[s] <- (jiho.science[s] - 52)
+for (s in 1:length(studenta.science)) {
+  if (studenta.science[s] > 52) {
+    studenta.science[s] <- (studenta.science[s] - 52)
   }
-  quer[12,s] = jiho.science[s]
+  quer[12,s] = studenta.science[s]
 }
 
-jiho.literature <- outersect(jiho.wrong, jiho.science, jiho.history_social)
+studenta.literature <- outersect(studenta.wrong, studenta.science, studenta.history_social)
 for (s in 1:length(literature)) {
-  if (jiho.literature[s] > 52) {
-    jiho.literature[s] <- (jiho.literature[s] - 52)
+  if (studenta.literature[s] > 52) {
+    studenta.literature[s] <- (studenta.literature[s] - 52)
   }
   quer[13,s] = literature[s]
 }
@@ -188,35 +188,35 @@ for (s in 1:length(literature)) {
 
 
 no.wrong <- c(
-  length(jiho.wrong),
-  length(jiho.wrong.reading),
-  length(jiho.coe),
-  length(jiho.wic),
-  length(jiho.wrong.reading)-length(c(unique(jiho.coe, jiho.wic))),
-  length(jiho.wrong.writing),
-  length(jiho.coew),
-  length(jiho.wicw),
-  length(jiho.eoiw),
-  length(jiho.secw),
-  length(jiho.history_social),
-  length(jiho.science),
-  length(jiho.wrong)-length(c(unique(jiho.history_social, jiho.science)))
+  length(studenta.wrong),
+  length(studenta.wrong.reading),
+  length(studenta.coe),
+  length(studenta.wic),
+  length(studenta.wrong.reading)-length(c(unique(studenta.coe, studenta.wic))),
+  length(studenta.wrong.writing),
+  length(studenta.coew),
+  length(studenta.wicw),
+  length(studenta.eoiw),
+  length(studenta.secw),
+  length(studenta.history_social),
+  length(studenta.science),
+  length(studenta.wrong)-length(c(unique(studenta.history_social, studenta.science)))
 )
 
 percent.wrong <- c(
-  length(jiho.wrong)/length(c(reading,writing)),
-  length(jiho.wrong.reading)/length(reading),
-  length(jiho.coe)/length(command.of.evidence.reading),
-  length(jiho.wic)/length(words.in.context.reading),
-  (length(jiho.wrong.reading)-length(c(unique(jiho.coe, jiho.wic))))/(length(reading)-length(c(unique(command.of.evidence.reading, words.in.context.reading)))),
-  length(jiho.wrong.writing)/length(writing),
-  length(jiho.coew)/length(command.of.evidence.writing),
-  length(jiho.wicw)/length(words.in.context.writing),
-  length(jiho.eoiw)/length(expression.of.ideas.writing),
-  length(jiho.secw)/length(standard.english.convention.writing),
-  length(jiho.history_social)/length(analysis.in.history_social.studies),
-  length(jiho.science)/length(analysis.in.science),
-  (length(jiho.wrong)-length(c(unique(jiho.history_social, jiho.science))))/(length(c(reading,writing))-length(c(unique(analysis.in.history_social.studies,analysis.in.science))))
+  length(studenta.wrong)/length(c(reading,writing)),
+  length(studenta.wrong.reading)/length(reading),
+  length(studenta.coe)/length(command.of.evidence.reading),
+  length(studenta.wic)/length(words.in.context.reading),
+  (length(studenta.wrong.reading)-length(c(unique(studenta.coe, studenta.wic))))/(length(reading)-length(c(unique(command.of.evidence.reading, words.in.context.reading)))),
+  length(studenta.wrong.writing)/length(writing),
+  length(studenta.coew)/length(command.of.evidence.writing),
+  length(studenta.wicw)/length(words.in.context.writing),
+  length(studenta.eoiw)/length(expression.of.ideas.writing),
+  length(studenta.secw)/length(standard.english.convention.writing),
+  length(studenta.history_social)/length(analysis.in.history_social.studies),
+  length(studenta.science)/length(analysis.in.science),
+  (length(studenta.wrong)-length(c(unique(studenta.history_social, studenta.science))))/(length(c(reading,writing))-length(c(unique(analysis.in.history_social.studies,analysis.in.science))))
 )
 
 
@@ -240,5 +240,4 @@ View(results)
 
 analysis <- data.frame(results)
 write_csv (analysis, "analysis.csv")
-
 
