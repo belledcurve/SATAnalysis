@@ -91,13 +91,13 @@ studentb.history_social <- intersect(studentb.wrong, analysis.in.history_social.
 studentb.science <- intersect(studentb.wrong, analysis.in.science)
 
 
-
+  #setup slots for question numbers
 quer <- c(rep(NA, times = length(studenta.wrong)*13))
 dim(quer) <- c(13,length(studenta.wrong))
 quer
 
 
-
+  #input question numbers into slots
 for (s in 1:length(studenta.wrong)) {
   if (studenta.wrong[s] > 52) {
     studenta.wrong[s] <- (studenta.wrong[s] - 52)
@@ -191,7 +191,7 @@ for (s in 1:length(literature)) {
 
 
 
-
+  #col for description - number of wrong answers 
 no.wrong <- c(
   length(studenta.wrong),
   length(studenta.wrong.reading),
@@ -208,6 +208,7 @@ no.wrong <- c(
   length(studenta.wrong)-length(c(unique(studenta.history_social, studenta.science)))
 )
 
+  #col for description - percentage of wrong answers
 percent.wrong <- c(
   length(studenta.wrong)/length(c(reading,writing)),
   length(studenta.wrong.reading)/length(reading),
@@ -226,7 +227,6 @@ percent.wrong <- c(
 
 
 index <- c("total.wrong","reading.wrong", "coe", "wic", "others", "writing.wrong", "coew", "wicw", "eoiw", "secw", "by passage.history", "by passage.science", "by passage.literature")
-row <- c("no.wrong","percent.wrong")
 
   
 #results.raw <- matrix(no.wrong, percent.wrong, dimnames = list(row, col))
