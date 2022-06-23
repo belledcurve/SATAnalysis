@@ -93,7 +93,7 @@ studentb.science <- intersect(studentb.wrong, analysis.in.science)
 
 
 
-quer <- c(rep(NA, times = length(studenta.wrong)*13))
+quer <- c(rep(" ", times = length(studenta.wrong)*13))
 dim(quer) <- c(13,length(studenta.wrong))
 quer
 
@@ -183,11 +183,11 @@ for (s in 1:length(studenta.science)) {
 }
 
 studenta.literature <- outersect(studenta.wrong, studenta.science, studenta.history_social)
-for (s in 1:length(literature)) {
+for (s in 1:length(studenta.literature)) {
   if (studenta.literature[s] > 52) {
     studenta.literature[s] <- (studenta.literature[s] - 52)
   }
-  quer[13,s] = literature[s]
+  quer[13,s] = studenta.literature[s]
 }
 
 
