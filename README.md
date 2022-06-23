@@ -10,4 +10,4 @@ this code will return a .csv file with relavant data and will be able to connect
 
 <img width="1147" alt="image" src="https://user-images.githubusercontent.com/92968898/175197431-43d2b1b1-bc57-4c30-afd8-d0d4ca31fdb0.png">
 
-<img width="535" alt="image" src="https://user-images.githubusercontent.com/92968898/175197450-211d37be-c383-4b4a-914c-8dbd7c7a92a5.png">
+<img width="668" alt="image" src="https://user-images.githubusercontent.com/92968898/175236397-268e8f8b-8111-4c77-893e-e9cec3567142.png">
