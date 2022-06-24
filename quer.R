@@ -1,4 +1,4 @@
-uer <- c(rep(0, times = length(studenta.wrong)*13))
+quer <- c(rep(0, times = length(studenta.wrong)*13))
 dim(quer) <- c(13,length(studenta.wrong))
 quer
 
