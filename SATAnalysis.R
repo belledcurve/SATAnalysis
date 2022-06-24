@@ -199,7 +199,7 @@ percent.wrong <- c(
   length(studenta.secw)/length(standard.english.convention.writing),
   length(studenta.history_social)/length(analysis.in.history_social.studies),
   length(studenta.science)/length(analysis.in.science),
-  (length(studenta.wrong)-length(c(unique(studenta.history_social, studenta.science))))/(length(c(reading,writing))-length(c(unique(analysis.in.history_social.studies,analysis.in.science))))
+  (length(studenta.wrong)-length(c(unique(c(studenta.history_social, studenta.science)))))/(length(c(reading,writing))-length(c(unique(c(analysis.in.history_social.studies,analysis.in.science)))))
 )
 
 for (s in 1:nrow(quer)) {
