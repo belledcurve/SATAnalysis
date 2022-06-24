@@ -238,7 +238,7 @@ View(results)
 #for (s in 1:nrow(quer))) {
 #  for (d in 1:ncol(quer))) {
 #    if (quer [s,d] > 52) {
-#      quer [s,d] <<- paste((quer[s,d] - 52), "W")
+#      quer [s,d] <- paste((as.numeric(quer[s,d]) - 52), "W")
 #    }
 #  }
 #}
