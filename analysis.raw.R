@@ -235,8 +235,8 @@ results <- cbind(no.wrong, percent.wrong, quer)
 results <- cbind(index, results)
 View(results)
 
-#for (s in 1:length(nrow(quer))) {
-#  for (d in 1:length(ncol(quer))) {
+#for (s in 1:nrow(quer))) {
+#  for (d in 1:ncol(quer))) {
 #    if (quer [s,d] > 52) {
 #      quer [s,d] <<- paste((quer[s,d] - 52), "W")
 #    }
