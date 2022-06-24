@@ -7,6 +7,8 @@ this code will return a .csv file with relavant data and will be able to connect
 
 <img width="1317" alt="image" src="https://user-images.githubusercontent.com/92968898/175478957-0cdca45e-a06d-49dc-9476-01a63b948475.png">
 
-<img width="1071" alt="image" src="https://user-images.githubusercontent.com/92968898/175479024-faa041c5-f129-42eb-857f-231d64548eab.png">
+<p style = "float: left; margin-top: 0px">
+<img width="550" alt="image" src="https://user-images.githubusercontent.com/92968898/175479024-faa041c5-f129-42eb-857f-231d64548eab.png"/>
 
-<img width="710" alt="image" src="https://user-images.githubusercontent.com/92968898/175479061-0e09fef3-82de-45ed-9acf-00f67fda8d34.png">
+<img width="450" alt="image" src="https://user-images.githubusercontent.com/92968898/175479061-0e09fef3-82de-45ed-9acf-00f67fda8d34.png"/>
+</p>
