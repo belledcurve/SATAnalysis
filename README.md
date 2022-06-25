@@ -12,3 +12,4 @@ this code will return a .csv file with relavant data and will be able to connect
 
 <img width="450" alt="image" src="https://user-images.githubusercontent.com/92968898/175479061-0e09fef3-82de-45ed-9acf-00f67fda8d34.png"/>
 </p>
+# newest code deletes the W in sections with only writing questions. W is still pasted next to questions in sections where writing and reading questions are coexistent. 
