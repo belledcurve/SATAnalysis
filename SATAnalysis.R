@@ -98,7 +98,7 @@ dim(quer) <- c(13,length(studenta.wrong))
 quer
 
 
-
+{
 for (s in 1:length(studenta.wrong)) {
   quer[1,s] = studenta.wrong[s]
 }
@@ -125,49 +125,60 @@ for (s in 1:length(others.reading)) {
 
 
 for (s in 1:length(studenta.wrong.writing)) {
-  
+  if (studenta.wrong.writing[s] > 52) {
+    studenta.wrong.writing[s] <- (studenta.wrong.writing[s] - 52)
+  }
   quer[6,s] = studenta.wrong.writing[s]
 }
 
 
 for (s in 1:length(studenta.coew)) {
+  if (studenta.coew[s] > 52) {
+    studenta.coew[s] <- (studenta.coew[s] - 52)
+  }
   quer[7,s] = studenta.coew[s]
 }
 
 
 for (s in 1:length(studenta.wicw)) {
+  if (studenta.wicw[s] > 52) {
+    studenta.wicw[s] <- (studenta.wicw[s] - 52)
+  }
   quer[8,s] = studenta.wicw[s]
 }
 
 
 for (s in 1:length(studenta.eoiw)) {
+  if (studenta.eoiw[s] > 52) {
+    studenta.eoiw[s] <- (studenta.eoiw[s] - 52)
+  }
   quer[9,s] = studenta.eoiw[s]
 }
 
 
 for (s in 1:length(studenta.secw)) {
+  if (studenta.secw[s] > 52) {
+    studenta.secw[s] <- (studenta.secw[s] - 52)
+  }
   quer[10,s] = studenta.secw[s]
 }
 
 
+
 for (s in 1:length(studenta.history_social)) {
-  
   quer[11,s] = studenta.history_social[s]
 }
 
 
 for (s in 1:length(studenta.science)) {
-  
   quer[12,s] = studenta.science[s]
 }
 
 studenta.literature <- outersect(studenta.wrong, studenta.science, studenta.history_social)
 for (s in 1:length(studenta.literature)) {
-  
   quer[13,s] = studenta.literature[s]
 }
-
-
+}
 
 
 no.wrong <- c(
