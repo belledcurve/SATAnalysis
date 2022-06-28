@@ -52,14 +52,6 @@ studenta.wrong.writing <- studenta.wrong.writing.raw + 52
 studenta.wrong <- c(studenta.wrong.reading, studenta.wrong.writing)
 
 
-studentb.wrong.reading <- c(5, 17, 21, 22, 29, 32, 33, 44, 46, 47)
-studentb.wrong.writing.raw <- c(3, 4, 5, 6, 7, 13, 18, 22, 23, 29, 30, 34, 35, 36, 42)
-studentb.wrong.writing <- studentb.wrong.writing.raw + 52
-studentb.wrong <- c(studentb.wrong.reading, studentb.wrong.writing)
-
-
-
-
 
 #student wrong answers analysis
 #reading analysis - student 1
@@ -71,26 +63,6 @@ studenta.coew <- intersect(studenta.wrong, command.of.evidence.writing)
 studenta.wicw <- intersect(studenta.wrong, words.in.context.writing)
 studenta.eoiw <- intersect(studenta.wrong, expression.of.ideas.writing)
 studenta.secw <- intersect(studenta.wrong, standard.english.convention.writing)
-
-
-#reading analysis - student 2
-studentb.coe <- intersect(studentb.wrong, command.of.evidence.reading)
-studentb.wic <- intersect(studentb.wrong, words.in.context.reading)
-
-#writing analysis - student 2
-studentb.coew <- intersect(studentb.wrong, command.of.evidence.writing)
-studentb.wicw <- intersect(studentb.wrong, words.in.context.writing)
-studentb.eoiw <- intersect(studentb.wrong, expression.of.ideas.writing)
-studentb.secw <- intersect(studentb.wrong, standard.english.convention.writing)
-
-
-#passage analysis
-studenta.history_social <- intersect(studenta.wrong, analysis.in.history_social.studies)
-studenta.science <- intersect(studenta.wrong, analysis.in.science)
-
-studentb.history_social <- intersect(studentb.wrong, analysis.in.history_social.studies)
-studentb.science <- intersect(studentb.wrong, analysis.in.science)
-
 
 
 quer <- c(rep(0, times = length(studenta.wrong)*13))
