@@ -30,7 +30,6 @@ for (s in 1:length(others.reading)) {
 
 
 for (s in 1:length(studenta.wrong.writing)) {
-  
   quer[6,s] = studenta.wrong.writing[s]
 }
 
@@ -56,18 +55,15 @@ for (s in 1:length(studenta.secw)) {
 
 
 for (s in 1:length(studenta.history_social)) {
-  
   quer[11,s] = studenta.history_social[s]
 }
 
 
 for (s in 1:length(studenta.science)) {
-  
   quer[12,s] = studenta.science[s]
 }
 
 studenta.literature <- outersect(studenta.wrong, studenta.science, studenta.history_social)
 for (s in 1:length(studenta.literature)) {
-  
   quer[13,s] = studenta.literature[s]
 }
