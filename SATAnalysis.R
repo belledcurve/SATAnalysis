@@ -204,10 +204,9 @@ row <- c("no.wrong","percent.wrong")
 #results.raw <- matrix(no.wrong, percent.wrong, dimnames = list(row, col))
 results <- cbind(no.wrong, percent.wrong, quer)
 results <- cbind(index, results)
-View(results)
-
-
-
 
 analysis <- data.frame(results)
 write_csv (analysis, "analysis.csv")
+
+
+
