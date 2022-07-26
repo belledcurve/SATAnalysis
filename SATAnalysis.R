@@ -215,6 +215,6 @@ results <- cbind(no.wrong, percent.wrong, quer)
 results <- cbind(index, results)
 
 analysis <- data.frame(results)
-write_csv (analysis, "analysis.csv")
-
+write.csv (analysis, "analysis.csv")
+#write_csv (analysis, "analysis.csv") also works and is preferred; however, I would prefer this code to work as well without the use of libraries. 
 
